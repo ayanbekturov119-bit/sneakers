@@ -73,7 +73,7 @@ export const Main = () => {
           </p>
         </div>
 
-        <button className="w-8 h-8 border border-[#F2F2F2] rounded-lg flex items-center justify-center">
+        <button className="w-8 h-8 border border-[#F2F2F2] rounded-lg flex items-center justify-center cursor-pointer">
           +
         </button>
       </div>

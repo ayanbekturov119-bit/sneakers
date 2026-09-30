@@ -2,8 +2,13 @@ import logo from '../assets/logo.svg';
 import price from '../assets/Group.svg';
 import heart from '../assets/health.svg';
 import person from '../assets/Union.svg';
+import { useBear } from '../store';
 
 export const Header = () => {
+  const bears = useBear((state) => state.bears)
+  const increasePopulation = useBear((state) => state.increasePopulation)
+  const decreasePopulation = useBear((state) => state.decreasePopulation)
+
   return (
     <header className='h-[100px] border-b border-[#EAEAEA] px-10 flex items-center justify-between'>
       <div className='flex items-center gap-4'>
@@ -18,10 +23,13 @@ export const Header = () => {
         </div>
       </div>
 
+      <button onClick={increasePopulation}>+</button>
+      <button onClick={decreasePopulation}>-</button>
+
       <div className='flex items-center gap-8'>
         <div className='flex items-center gap-2'>
           <img className='w-[18px]' src={price} alt='' />
-          <span className='text-[14px] text-[#5C5C5C]'>1205 руб.</span>
+          <span className='text-[14px] text-[#5C5C5C]'>{bears} руб.</span>
         </div>
 
         <div className='flex items-center gap-2'>

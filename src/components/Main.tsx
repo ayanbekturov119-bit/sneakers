@@ -1,88 +1,15 @@
 import banner from "../assets/frogg.png";
 import search from "../assets/search.svg";
 import arrow from "../assets/arrow.svg";
-import sneaker from "../assets/item1.png";
 import check from "../assets/galochka.svg";
 import add from "../assets/add.svg";
 import heart from "../assets/health.svg";
 import Like from "../assets/Like.svg";
 import { useState } from "react";
+import { useBear } from "../store";
 
 export const Main = () => {
-  const sneakers = [
-    {
-      id: 1,
-      title: "Мужские Кроссовки Nike Blazer Mid Suede",
-      price: 12999,
-      image: sneaker,
-    },
-    {
-      id: 2,
-      title: "Мужские Кроссовки Nike Air Max 270",
-      price: 13999,
-      image: sneaker,
-    },
-    {
-      id: 3,
-      title: "Мужские Кроссовки Nike Air Force 1",
-      price: 14999,
-      image: sneaker,
-    },
-    {
-      id: 4,
-      title: "Мужские Кроссовки Nike Dunk Low",
-      price: 15999,
-      image: sneaker,
-    },
-    {
-      id: 5,
-      title: "Мужские Кроссовки Nike Air Jordan 1",
-      price: 17999,
-      image: sneaker,
-    },
-    {
-      id: 6,
-      title: "Мужские Кроссовки Nike Court Vision",
-      price: 11999,
-      image: sneaker,
-    },
-    {
-      id: 7,
-      title: "Мужские Кроссовки Nike Revolution",
-      price: 10999,
-      image: sneaker,
-    },
-    {
-      id: 8,
-      title: "Мужские Кроссовки Nike Air Max 90",
-      price: 16999,
-      image: sneaker,
-    },
-    {
-      id: 9,
-      title: "Мужские Кроссовки Nike Air Max SC",
-      price: 12999,
-      image: sneaker,
-    },
-    {
-      id: 10,
-      title: "Мужские Кроссовки Nike Waffle Debut",
-      price: 13999,
-      image: sneaker,
-    },
-    {
-      id: 11,
-      title: "Мужские Кроссовки Nike Venture Runner",
-      price: 14999,
-      image: sneaker,
-    },
-    {
-      id: 12,
-      title: "Мужские Кроссовки Nike Court Legacy",
-      price: 11999,
-      image: sneaker,
-    },
-  ];
+  const sneakers = useBear((state) => state.sneakers)
 
   const [added, setAdded] = useState<number[]>([]);
   const [liked, setLiked] = useState<number[]>([]);

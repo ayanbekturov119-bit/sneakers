@@ -89,7 +89,7 @@ export const Main = () => {
 
   return (
     <div className="px-10 py-6">
-      {/* Баннер */}
+      {/* Баннер скибиди тру адам */}
       <div className="relative">
         <img src={banner} alt="Banner" className="w-full rounded-2xl" />
 
@@ -98,7 +98,7 @@ export const Main = () => {
         </div>
       </div>
 
-      {/* поиск */}
+      {/* поиск детей, для Эпштейна */}
       <div className="flex items-center justify-between mt-8">
         <h2 className="text-[28px] font-bold">Все кроссовки</h2>
 
@@ -120,7 +120,7 @@ export const Main = () => {
             key={item.id}
             className="relative w-[210px] rounded-2xl bg-white p-5 border border-[#F3F3F3] transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
           >
-            {/* Сердечко */}
+            {/* Сердце льва, 🦁☝️ рванный пацанчик */}
             <button
               onClick={() => {
                 setLiked((prev) =>
@@ -157,7 +157,7 @@ export const Main = () => {
                 </p>
               </div>
 
-              {/* Добавить */}
+              {/* Добавить резиновый пенис в рванный туз  */}
               <button
                 onClick={() => {
                   setAdded((prev) =>

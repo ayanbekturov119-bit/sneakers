@@ -6,8 +6,7 @@ import { useBear } from '../store';
 
 export const Header = () => {
   const bears = useBear((state) => state.bears)
-  const increasePopulation = useBear((state) => state.increasePopulation)
-  const decreasePopulation = useBear((state) => state.decreasePopulation)
+  const add = useBear((state) => state.add)
 
   return (
     <header className='h-[100px] border-b border-[#EAEAEA] px-10 flex items-center justify-between'>
@@ -23,8 +22,7 @@ export const Header = () => {
         </div>
       </div>
 
-      <button onClick={increasePopulation}>+</button>
-      <button onClick={decreasePopulation}>-</button>
+      <button onClick={() => add('морковь')}>Add</button>
 
       <div className='flex items-center gap-8'>
         <div className='flex items-center gap-2'>

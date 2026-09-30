@@ -10,6 +10,7 @@ import { useBear } from "../store";
 
 export const Main = () => {
   const sneakers = useBear((state) => state.sneakers)
+  const busket = useBear((state) => state.busket)
 
   const [added, setAdded] = useState<number[]>([]);
   const [liked, setLiked] = useState<number[]>([]);
@@ -17,6 +18,12 @@ export const Main = () => {
   return (
     <div className="px-10 py-6">
       {/* Баннер скибиди тру адам */}
+      {
+        busket.map((item) => (
+          <div>{ item }</div>
+        ))
+      }
+
       <div className="relative">
         <img src={banner} alt="Banner" className="w-full rounded-2xl" />
 

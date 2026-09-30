@@ -1,16 +1,20 @@
 import { create } from 'zustand';
 import sneaker from '../assets/item1.png';
 
-interface BearState {
-  bears: number;
-  sneakers: {
+interface ISneaker {
     id: number;
     title: string;
     price: number;
     image: string;
-  }[];
+}
+
+interface BearState {
+  bears: number;
+  sneakers: ISneaker[];
+  busket: string[] | [];
   increasePopulation: () => void;
   decreasePopulation: () => void;
+  add: (payload: string) => void
 }
 
 export const useBear = create<BearState>((set) => ({
@@ -89,6 +93,8 @@ export const useBear = create<BearState>((set) => ({
       image: sneaker,
     },
   ],
+  busket: ['аянчик','капуста', 'баклажан'],
   increasePopulation: () => set((state) => ({ bears: state.bears + 1 })),
   decreasePopulation: () => set((state) => ({ bears: state.bears - 1 })),
+  add: (payload) => set((state) => ({ busket: [...state.busket, payload] }))
 }));
